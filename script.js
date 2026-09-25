@@ -18,7 +18,7 @@ const MENU_ITEMS = [
     desc: 'Fresh organic mutton cooked in lamb fat, tomatoes, black pepper.',
 
     // PUT YOUR IMAGE HERE
-    image: 'images/karahi.png'
+    image: 'images/karahi.png.webp'
   },
 
   {
@@ -29,7 +29,7 @@ const MENU_ITEMS = [
     desc: 'Boneless chicken simmered in heavy dairy cream and white pepper.',
 
     // PUT YOUR IMAGE HERE
-    image: 'images/white_handi.png'
+    image: 'images/white_handi.png.webp'
   },
 
   {
@@ -40,7 +40,7 @@ const MENU_ITEMS = [
     desc: 'Seekh Kabab, Malai Boti & Mutton Chops on sizzling platter.',
 
     // PUT YOUR IMAGE HERE
-    image: 'images/BBQ.png'
+    image: 'images/BBQ.png.webp'
   },
 
   {
@@ -51,7 +51,7 @@ const MENU_ITEMS = [
     desc: 'Melt-in-mouth chicken cubes char-grilled over white coals.',
 
     // PUT YOUR IMAGE HERE
-    image: 'images/malai_boti.png'
+    image: 'images/malai_boti.png.webp'
   },
 
   {
@@ -62,7 +62,7 @@ const MENU_ITEMS = [
     desc: 'Long-grain basmati with saffron dum, tender chicken and fried onions.',
 
     // PUT YOUR IMAGE HERE
-    image: 'images/biryani.png'
+    image: 'images/biryani.png.webp'
   },
 
   {
@@ -73,7 +73,7 @@ const MENU_ITEMS = [
     desc: 'Fresh clay-oven flatbread brushed with desi ghee and sesame.',
 
     // PUT YOUR IMAGE HERE
-    image: 'images/naan.png'
+    image: 'images/naan.png.webp'
   },
 
     {
@@ -84,7 +84,7 @@ const MENU_ITEMS = [
     desc: 'Smooth, aromatic brew topped with creamy foam and elegant latte art — pure warmth in a cup.',
 
     // PUT YOUR IMAGE HERE
-    image: 'images/coffee.png'
+    image: 'images/coffee.png.webp'
   },
 
   {
@@ -95,7 +95,7 @@ const MENU_ITEMS = [
     desc: 'Smoky clay cup tea slow-simmered in buffalo milk and cardamom.',
 
     // PUT YOUR IMAGE HERE
-    image: 'images/chai.png'
+    image: 'images/chai.png.webp'
   }
 
 ];
@@ -112,7 +112,7 @@ const DISHES_3D = {
     desc: "Fresh mutton cooked in lamb fat & green chilies.",
     price: 2450,
     portion: "1 KG (Full)",
-    image: "images/karahi.png"
+    image: "images/karahi.png.webp"
   },
 
   bbq: {
@@ -120,7 +120,7 @@ const DISHES_3D = {
     desc: "Char-grilled Seekh Kabab & Malai Boti on sizzling iron.",
     price: 2850,
     portion: "Serves 3-4",
-    image: "images/BBQ.png"
+    image: "images/BBQ.png.webp"
   },
 
   biryani: {
@@ -128,7 +128,7 @@ const DISHES_3D = {
     desc: "Fragrant basmati rice with saffron & fried onions.",
     price: 650,
     portion: "Single Plate",
-    image: "images/biryani.png"
+    image: "images/biryani.png.webp"
   },
 
   coffee: {
@@ -136,7 +136,7 @@ const DISHES_3D = {
     desc: "Smooth, aromatic brew topped with creamy foam and elegant latte art — pure warmth in a cup.",
     price: 380,
     portion: "1 Clay Cup",
-    image: "images/coffee.png"
+    image: "images/coffee.png.webp"
   },
 
   chai: {
@@ -144,7 +144,7 @@ const DISHES_3D = {
     desc: "Smoky earthen clay cup tea baked in tandoor.",
     price: 180,
     portion: "1 Clay Cup",
-    image: "images/chai.png"
+    image: "images/chai.png.webp"
   }
 
 };
