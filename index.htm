@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AS Restaurant - Pakistani Cuisine & 3D Food View</title>
+
+  <link rel="stylesheet" href="style.css">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script
+    type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+</script>
+
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="nav-container">
+
+      <a href="#" class="logo">
+        AS <span class="highlight">RESTAURANT</span>
+        <span class="badge">Pakistan</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#view3d"> 3D Food</a>
+        <a href="#reserve">Book Table</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:+923163862958" class="call-btn">
+          03163862958
+        </a>
+
+        <button id="cartBtn" class="cart-btn" onclick="toggleCart()">
+          Basket (<span id="cartCount">0</span>)
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+      <span class="sub-title">
+        AS RESTAURANT & BBQ · اصلی روایتی ذائقہ
+      </span>
+
+      <h1>
+        Authentic Shinwari Karahi & Live Charcoal BBQ
+      </h1>
+
+      <p>
+        100% Halal meat, pure Desi ghee, and traditional clay
+        tandoor naans across Lahore, Karachi & Islamabad.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#menu" class="btn btn-primary">
+          Explore Menu
+        </a>
+
+        <a href="#view3d" class="btn btn-secondary">
+          View Food 
+        </a>
+
+        <a
+          href="https://wa.me/923163862958?text=Assalam-o-Alaikum%20AS%20Restaurant!%20I%20want%20to%20order."
+          target="_blank"
+          class="btn btn-whatsapp">
+          Order on WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 3D FOOD ================= -->
+  <section id="view3d" class="section-3d">
+
+    <div class="section-header">
+
+      <span class="tag">
+        Interactive  View ·
+      </span>
+
+      <h2>
+        Inspect Food in 3D
+      </h2>
+
+      
+    </div>
+
+
+    <!-- 3D FOOD TABS -->
+    <div class="dish-tabs">
+
+      <button
+        class="dish-tab active"
+        onclick="switch3DDish('karahi', this)">
+        Mutton Shinwari Karahi
+      </button>
+
+      <button
+        class="dish-tab"
+        onclick="switch3DDish('bbq', this)">
+        Royal BBQ Platter
+      </button>
+
+      <button
+        class="dish-tab"
+        onclick="switch3DDish('biryani', this)">
+        Chicken Dum Biryani
+      </button>
+
+      <button
+        class="dish-tab"
+        onclick="switch3DDish('coffee', this)">
+        VIP Special Coffee
+      </button>
+
+      <button
+        class="dish-tab"
+        onclick="switch3DDish('chai', this)">
+        Tandoori Matka Chai
+      </button>
+
+    </div>
+
+
+    <!-- 3D CARD -->
+    <div class="stage-3d" id="stage3D">
+
+      <div class="card-3d" id="card3D">
+
+        <div class="dish-visual-3d">
+
+          <!-- IMAGE -->
+          <img
+            id="foodImage"
+            class="food-image-3d"
+            src=""
+            alt="Food Image">
+
+          <div class="steam-particle"></div>
+
+        </div>
+
+
+        <div class="card-info-3d">
+
+          <h3 id="dishTitle">
+            AS Special Mutton Shinwari Karahi
+          </h3>
+
+          <p id="dishDesc">
+            Fresh mutton cooked in lamb fat & green chilies.
+          </p>
+
+          <div class="price-row">
+
+            <span
+              class="price-text"
+              id="dishPrice">
+              Rs. 2,450
+            </span>
+
+            <span
+              class="portion-text"
+              id="dishPortion">
+              1 KG (Full)
+            </span>
+
+          </div>
+
+
+          <div class="btn-group">
+
+            <button
+              class="btn btn-whatsapp"
+              onclick="orderCurrent3DWhatsApp()">
+              Order on WhatsApp
+            </button>
+
+            <button
+              class="btn btn-primary"
+              onclick="addCurrent3DToCart()">
+              Add to Basket
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MENU ================= -->
+  <section id="menu" class="menu-section">
+
+    <div class="section-header">
+
+      <span class="tag">
+        Desi Menu · مینو
+      </span>
+
+      <h2>
+        Our Delicious Offerings
+      </h2>
+
+    </div>
+
+
+    <div class="category-filters">
+
+      <button
+        class="cat-btn active"
+        onclick="filterMenu('all', this)">
+        All Items
+      </button>
+
+      <button
+        class="cat-btn"
+        onclick="filterMenu('karahi', this)">
+        Karahi & Handi
+      </button>
+
+      <button
+        class="cat-btn"
+        onclick="filterMenu('bbq', this)">
+        Charcoal BBQ
+      </button>
+
+      <button
+        class="cat-btn"
+        onclick="filterMenu('biryani', this)">
+        Biryani & Rice
+      </button>
+
+      <button
+        class="cat-btn"
+        onclick="filterMenu('drinks', this)">
+        Chai & Drinks
+      </button>
+
+    </div>
+
+
+    <div
+      class="menu-grid"
+      id="menuGrid">
+    </div>
+
+  </section>
+
+
+  <!-- ================= RESERVATION ================= -->
+  <section id="reserve" class="reserve-section">
+
+    <div class="reserve-box">
+
+      <div class="section-header">
+
+        <span class="tag">
+          Family Dining · میز بکنگ
+        </span>
+
+        <h2>
+          Book a Table at AS Restaurant
+        </h2>
+
+      </div>
+
+
+      <form
+        id="reserveForm"
+        onsubmit="handleReservation(event)">
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Branch City</label>
+
+            <select id="resBranch">
+
+              <option value="Sahiwal - Harappa Road">
+                Sahiwal (Harappa Road )
+              </option>
+
+              <option value="Bahawalpur - Hasilpur Road ">
+                Bahawalpur(Madni Town)
+              </option>
+
+              <option value="Islamabad - F-7 Markaz">
+                Islamabad (F-7 Markaz, Jinnah Super)
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Seating Hall</label>
+
+            <select id="resHall">
+
+              <option value="Family Hall (AC)">
+                Separate Family Hall (Air Conditioned)
+              </option>
+
+              <option value="Open-Air Rooftop">
+                Open-Air Rooftop BBQ Lounge
+              </option>
+
+              <option value="VIP Executive Room">
+                VIP Executive Private Room
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Date</label>
+
+            <input
+              type="date"
+              id="resDate"
+              required
+              value="2026-10-02">
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Time</label>
+
+            <select id="resTime">
+
+              <option value="08:00 PM">
+                08:00 PM (Dinner)
+              </option>
+
+              <option value="09:00 PM">
+                09:00 PM
+              </option>
+
+              <option value="10:00 PM">
+                10:00 PM
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Guests</label>
+
+            <select id="resGuests">
+
+              <option value="2">
+                2 Persons
+              </option>
+
+              <option value="4" selected>
+                4 Persons
+              </option>
+
+              <option value="8">
+                8 Persons
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Your Name</label>
+
+            <input
+              type="text"
+              id="resName"
+              placeholder="e.g. Abdullah Khan"
+              required>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Mobile / WhatsApp Number</label>
+
+            <input
+              type="tel"
+              id="resPhone"
+              placeholder="0316-3862958"
+              required>
+
+          </div>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn btn-primary btn-block">
+
+          Confirm Table Reservation
+
+        </button>
+
+      </form>
+
+
+      <div
+        id="reserveSuccess"
+        class="success-message"
+        style="display:none;">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CART ================= -->
+  <div
+    id="cartDrawer"
+    class="cart-drawer">
+
+    <div class="cart-header">
+
+      <h3>
+        Your Food Basket
+      </h3>
+
+      <button
+        class="close-btn"
+        onclick="toggleCart()">
+        &times;
+      </button>
+
+    </div>
+
+
+    <div
+      id="cartItemsList"
+      class="cart-items-list">
+    </div>
+
+
+    <div class="cart-footer">
+
+      <div class="cart-inputs">
+
+        <input
+          type="text"
+          id="custName"
+          placeholder="Your Name">
+
+        <input
+          type="tel"
+          id="custPhone"
+          placeholder="WhatsApp #">
+
+        <textarea
+          id="custAddress"
+          placeholder="Delivery Address">
+        </textarea>
+
+      </div>
+
+
+      <div class="total-row">
+
+        <span>
+          Total Bill:
+        </span>
+
+        <span
+          id="cartTotal"
+          class="total-price">
+          Rs. 0
+        </span>
+
+      </div>
+
+
+      <button
+        class="btn btn-whatsapp btn-block"
+        onclick="checkoutViaWhatsApp()">
+
+        Confirm Order via WhatsApp
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= WHATSAPP ================= -->
+  <a
+    href="https://wa.me/923163862958"
+    target="_blank"
+    class="floating-whatsapp"
+    title="WhatsApp">
+    WhatsApp
+  </a>
+
+  <div class="last_img">
+    
+  </div>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+
+    <p>
+      &copy; 2026 AS Restaurant & BBQ
+      (Abdullah Sagheer). All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
